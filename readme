@@ -1,0 +1,96 @@
+Q1 -> Why are we using JPA Annotation instead of Hibernate?
+A  -> For example, why are we not using this org.hibernate.annotations.Entity?
+	JPA is a standard specification. 
+	Hibernate is an implementation of the JPA specification.
+	Hibernate implements all of the JPA annotations.
+	The Hibernate team recommends the use of JPA annotations as a best practice.
+
+Q2 -> What is a SessionFactory?
+A  -> Reads the hibernate config file
+	Create Session objects
+	We call it a Heavy-weight object
+	Only create once in your app
+	
+Q3 -> What is a Session?
+A  -> Wraps a JDBC connection
+	Main object used to save/retrieve objects
+	Short-lived object
+	Retrieved from SessionFactory
+
+Q4 -> What are ID Generation Strategies?
+A  -> GenrationType.AUTO, GenerationType.IDENTITY, GenerationType.SEQUENCE, GenerationType.TABLE
+	1.	GenerationType.AUTO
+		Pick an appropriate strategy for the particular database
+	2.	GenerationType.IDENTITY
+		Assign primary keys using database identity column
+	3.	GenerationType.SEQUENCE
+		Assign primary keys using a database sequence
+	4.	GenerationType.TABLE
+		Assign primary keys using an underlying database table to ensure uniqueness
+		
+Q5 -> Explain IDENTITY and SEQUENCE generation strategies?
+A  -> Strategy used by sequence:
+	Before inserting a new row, ask the database for the next sequence value, 
+	then insert this row with the returned sequence value as ID.
+
+	Strategy used by identity:
+	Insert a row without specifying a value for the ID. 
+	After inserting the row, ask the database for the last generated ID.
+	
+Q6 -> What is a custom generation strategy?
+A  -> Create implementation of org.hibernate.id.IdentifierGenerator
+	Override the method: public Serializable generate(...)
+	Warning: Always generate unique value.
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
